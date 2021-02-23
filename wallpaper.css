@@ -1,0 +1,40 @@
+﻿body{
+	background: url(https://cdn.hipwallpaper.com/i/83/55/1vdRma.jpg) no-repeat center center fixed;
+    background-size: 100%;
+}
+
+div#menu0{
+	color: white;
+}
+
+div#menu1{
+	display: none;
+}
+
+div#menu2{
+	display: none;
+}
+
+div#menu3{
+	display: none;
+}
+
+div#menu4{
+	display: none;
+}
+
+div#menu5{
+	display: none;
+}
+
+ input#wallpaperActive{
+	  display: block;
+ }
+
+ input#clock{
+	  display: none;
+ }
+
+ h4{
+	  display: none;
+ }

@@ -1,0 +1,325 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <link rel="stylesheet" href="style.css" type="text/css"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing page</title>
+</head>
+<body>
+    <h3>
+        <b>Что такое JavaScript и зачем он нужен?</b><br><br>
+        Как и у любого языка программирования, основная задача Javascript создавать последовательность действий, которые будут приводить к определенному результату.
+
+        Это могут быть условия «если-то», циклы, которые создают определенную последовательность действий, математические вычисления и.т.д.
+
+        <b>Самое главное в том, что все эти операции можно производить на веб-страницах, в окне браузера. Причем, javascript может работать и без подключения к интернету.</b><br><br>
+
+        <b>1) Математические операции</b> <br><br>
+
+        На веб-страницах очень часто возникает необходимость произвести те или иные вычисления.
+
+        Например, есть два текстовых поля и нужно в третьем текстовом поле вывести сумму двух чисел, которые введены в первые два.
+
+        С помощью Javascript можно создать калькулятор и разместить его на веб-странице.<br>
+
+        Еще ситуация, возьмем какую-нибудь текстовую строку на веб-странице, нужно увеличить ее размер в 1,5 раза. Это тоже можно сделать с помощью математических вычислений, путем умножения текущего размера на коэффициент 1,5.
+
+        Задач, которые требуют вычислений очень и очень много на практике. Javascript позволяет все это делать.<br><br>
+
+        <b>2) Обработка и валидация данных в HTML-формах</b><br><br>
+
+        Javascript позволяет проверять, что все требуемые поля заполнены и данные, которые в них находятся соответствуют нужному формату (например, если требуются цифры, то должны быть только цифры и не должно быть букв).
+
+        Делает это Javascript без перезагрузки страницы и даже без подключения к Интернет.
+
+        Прежде чем отправлять данные на сервер, они проходят предварительную проверку на Javascript. Это снижает нагрузку на сервер.<br><br>
+
+        <b>3) Взаимодействия с пользователем и события</b><br><br>
+
+        На веб-странице могут появляться различные эффекты, в зависимости от того, какие действия совершает пользователь.<br>
+
+        Выпадающее меню на сайте при наведении курсора мыши.<br>
+
+        При клике на кнопку скрыть или показать какой-то элемент на странице.<br>
+
+        Появления всплывающего окна, когда курсор мыши ушел за пределы окна браузера.<br>
+
+        Затемнение заднего фона и эффекты плавного появления элемента реализуются на Javascript.
+
+        И.т.д.<br><br>
+
+        <b>4) Взаимодействовать с HTML-элементами на странице и управлять их содержимым и стилями.</b><br><br>
+
+        При наступлении определенного события (например, клик мыши или любого другого) можно изменять внешний вид (стили CSS) элементов на странице.
+
+        Делается это все программно.
+
+        Еще можно добавлять какие-нибудь HTML-теги или атрибуты к ним, также при наступлении определенного события.<br><br>
+
+        <b>5) Добавление анимации и различных графических эффектов на веб-страницы.</b><br><br>
+
+        Падающие и двигающиеся объекты. Например, снег на сайт.<br>
+        <br>
+    </h3>
+<h2>Далее посмотрим на пример того, какой функционал можно сделать на основе html, css и javascript:</h2><br>
+    <div id="menu0">
+        <script>
+            if (localStorage.getItem('name') != "" && localStorage.getItem('name') != "null") {
+                document.getElementById('menu0').innerHTML = "Пользователь: " + localStorage.getItem('name');
+            }
+
+            else (localStorage.setItem('name', prompt("Приветствую! Как Вас зовут?", "Введите Имя")))
+                 if(localStorage.getItem('name') === "null" || localStorage.getItem('name') === ""){
+                     alert("Ошибка! Вы ничего не ввели!");
+                     ReEnterName();
+                 }
+                 else document.getElementById('menu0').innerHTML = "Пользователь: " + localStorage.getItem('name');
+
+            function ReEnterName() {
+                localStorage.setItem('name', prompt("Приветствую! Как Вас зовут?", "Введите новое имя"));
+                if(localStorage.getItem('name') === "null" || localStorage.getItem('name') === ""){
+                    alert("Ошибка! Вы ничего не ввели!");
+                    ReEnterName();
+                }
+                else document.getElementById('menu0').innerHTML = "Пользователь: " + localStorage.getItem('name');
+            }
+        </script>
+
+        <input type="button" value="Повторно ввести имя" onclick="ReEnterName()">
+    </div>
+
+    <div id="menu1">
+        №1. Задача с поиском площади треугольника.
+        <script>
+            function Triangle() {
+                var t_ah = 0;
+                var a = prompt("Введите число в качестве высоты треугольника", "");
+                var h = prompt("Введите число в качестве основания треугольника", "");
+                var s = (a * h) / 2;
+
+                if (a == "" || h == "" || a === null || h === null || s === 0) {
+                    alert("Вы ничего не ввели в одном поле или более. Попробуйте еще раз.");
+                    Triangle();
+                }
+
+                else if (isNaN(s)) {
+                        alert("Вы вводили не только числа, что привело к ошибке.");
+                     }
+                     else alert("Высота = " + h + "; " + "Основание = " + a + "; " + "Площадь = " + s);
+            }
+        </script>
+        <input type="button" value="Найти площадь" onclick="Triangle()">
+    </div>
+
+    <div id="menu2">
+    №2. Сравнение длин введенных строк.
+        <script>
+            function Strings() {
+                var fstr = prompt("Введите первую строку", "");
+                var sstr = prompt("Введите вторую строку", "");
+
+                if(fstr === "" || sstr === "" || fstr === null || sstr === null){
+                    alert("Вы ничего не ввели в одну строку или более");
+                }
+                else if (fstr.length == sstr.length) alert("Длины этих строк одинаковы");
+                    else alert("Длины этих строк не одинаковы");              
+            }
+        </script>
+        <input type="button" value="Сравнить строки" onclick="Strings()">
+    </div>
+
+    <div id="menu3">
+    №3. Вычисление максимального и минимального значения массива, состоящего из пяти введенных чисел.
+        <script>
+            function Array() {
+                let array = [];
+                var i, min, max, t=0;
+                for (i = 0; i < 5; i++) {
+                    array[i] = prompt("Введите пять чисел через запятую", "");
+                }
+                for (i = 0; i < 5; i++) {
+                    parseInt(array[i], 10);
+                    console.log(array[i]);
+                }
+                for (i = 0; i < 5; i++) {
+                    if (array[i] === "" || array[i] === null) {
+                        alert("Вы ничего не ввели в одном или более полях. Попробуйте еще раз.");
+                        Array();
+                    }
+                    if (array[i].replace(/\d/g, '').length) t++;
+                }
+                min = array[0];
+                max = array[0];
+                for (i = 0; i < 5; i++) {
+                    if (array[i] < min) min = array[i];
+                    if (array[i] > max) max = array[i];
+                }
+                if (t > 0) alert("Ошибка! Вы вводили не только числа!");
+                else alert("Минимальное значение массива = " + min + "; " + "Максимальное значение массива = " + max);
+            }
+        </script>
+        <input type="button" value="Работа с массивом" id="array" onclick="Array()">
+    </div>
+    <h4>№4. Таймер с функциями "Старт"(Запуск тридцатисекундного отсчета), "Стоп"(Остановка отсчета) и "Прошедшее время"(Можно узнать сколько прошло времени с начала отсчета).↓↓↓</h4>
+    <div id="menu4">
+        00:00:30
+        <script>
+            var timeSpend = 0
+            var sNach = 30
+            var s = 30
+            var m = 00
+            var h = 00
+            var r = 0; var tt = 0;
+
+            function T() {
+                s -= 1;
+                if (s < 0) s = 59, m -= 1;
+                if (m < 0) m = 59, h -= 1;
+                if (h < 0) h = 23
+                if (s + m + h == 0) T3()
+                s = s + "";
+                m = m + "";
+                h = h + "";
+                if (s.length < 2) s = "0" + s;
+                if (m.length < 2) m = "0" + m;
+                if (h.length < 2) h = "0" + h;
+                menu4.innerHTML = h + ":" + m + ":" + s
+            }
+
+            function Pusk() {
+                if (!r) {
+                    r = 1; T2()
+                }
+            }
+
+            function T2() {
+                if (s + m + h == 0) s = 30, m = 00, h = 00;
+                tt = setInterval("T()", 1000)
+            }
+
+            function T3() {
+                clearInterval(tt);
+                r = 0;
+            }
+            function TimeSpend() {
+                timeSpend = sNach - s;
+                alert("Прошло времени в секундах -" + ' ' + timeSpend);
+            }
+        </script>
+    </div>
+    <div id="menu4_add">
+        <input type="button" value="Старт" id="clock" onclick="Pusk()">
+        <input type="button" value="Стоп" id="clock" onclick="T3()">
+        <input type="button" value="Прошедшее время" id="clock" onclick="TimeSpend()">
+    </div>
+
+    <div id="menu5">
+    №5. Тест по JavaScript для начинающих.
+        <script>
+            function StartTest(){
+                var result=0;
+
+                alert("В качестве ответа вводите цифру предлагаемого ответа.");
+
+                if(prompt("Вопрос №1. Как объявить переменную? \n1.var x \n2.var x = new x()") === '1'){
+                    result++;
+                    alert("Верно!");
+                }
+                else alert("Неверно!");
+
+                if(prompt("Вопрос №2. Какое выражение выведет на экран сообщение? \n1.warning('Warning!') \n2.alert('Warning!')") === '2'){
+                    result++;
+                    alert("Верно!");
+                }
+                else alert("Неверно!");
+
+                if(prompt("Вопрос №3. Чем отличаются циклы while и do...while? \n1.В цикле do...while выполняется сначала тело цикла, а потом уже проверяется его условие \n2.В цикле do...while сначала проверяется условие") === '1'){
+                    result++;
+                    alert("Верно!");
+                }
+                else alert("Неверно!");
+
+                if(prompt("Вопрос №4. Какое выражение выведет на экран окно с полем ввода и заголовком 'Hello'? \n1.alert('Hello', text.field) \n2.prompt('Hello', ' ')") === '2'){
+                    result++;
+                    alert("Верно!");
+                }
+                else alert("Неверно!");
+
+                if(prompt("Вопрос №5. Значение какого типа может быть результатом сравнения?? \n1.int \n2.boolean") === '2'){
+                    result++;
+                    alert("Верно!");
+                }
+                else alert("Неверно!");
+
+                if(prompt("Вопрос №6. Что из этого будет работать? \n1.localStorage.setItem('name','Tom') \n2.local.Storage.set.Item('Tom')") === '1'){
+                    result++;
+                    alert("Верно!");
+                }
+                else alert("Неверно!");
+
+                if(prompt("Вопрос №7. Как расшифровывается NaN? \n1.No alert Notified \n2.Not a Number") === '2'){
+                    result++;
+                    alert("Верно!");
+                }
+                else alert("Неверно!");
+
+                if(prompt("Вопрос №8. Как узнать длину массива arr? \n1.arr.getlength() \n2.arr.length") === '2'){
+                    result++;
+                    alert("Верно!");
+                }
+                else alert("Неверно!");
+
+                if(prompt("Вопрос №9. Как правильно объявить функцию? \n1.function.add('FunctionName'){} \n2.function FunctionName(){}") === '2'){
+                    result++;
+                    alert("Верно!");
+                }
+                else alert("Неверно!");
+
+                if(prompt("Вопрос №10. Если в окне вызванным функцией prompt нажать 'Отмена', то что запишется в переменную prompt? \n1.null \n2.Пустая строка") === '1'){
+                    result++;
+                    alert("Верно!");
+                }
+                else alert("Неверно!");
+
+                alert("Поздравляю! Тест закончен, вы набрали " + result + " правильных ответов из 10!");
+            }
+        </script>
+
+        <input type="button" value="Начать тест" onclick="StartTest()"> 
+    </div>
+
+    <div id="menu6">
+    №6. При нажатии на кнопку "Заставка" появится красивое изображение на все окно браузера. Чтобы вернуть все как было, нажмите кнопку "Заставка" еще раз.
+        <script>
+            var theme = 0;
+            function Wallpaper(){
+                if (theme == 0){
+                    style = document.createElement('link');
+                    style.rel   = 'stylesheet';
+                    style.type  = 'text/css';
+                    style.href  = 'wallpaper.css';
+                    document.head.appendChild(style);
+                    theme++;
+                }
+                else { style = document.createElement('link');
+                     style.rel   = 'stylesheet';
+                     style.type  = 'text/css';
+                     style.href  = 'style.css';
+                     document.head.appendChild(style);
+                     theme--;
+                }
+            }
+        </script>
+
+    </div>
+    <input type="button" id="wallpaperActive" value="Заставка" onclick="Wallpaper()">
+    <div id="menu6_add">
+        <script>
+            var DateTime = new Date();
+            document.getElementById('menu6_add').innerHTML = DateTime;
+        </script>
+    </div>
+</body>
+</html>

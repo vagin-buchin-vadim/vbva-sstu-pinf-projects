@@ -27,14 +27,39 @@ div#menu5{
 	display: none;
 }
 
- input#wallpaperActive{
-	  display: block;
+div#menu6 {
+	display: none;
+}
+
+div#menu6_add {
+	position: absolute;
+	display: block;
+	width: 570px;
+	height: 20px;
+	margin-left:  1318px;
+	margin-top: 870px;
+}
+
+input#wallpaperActive{
+	display: block;
+	margin-top: -30px;
+}
+
+input#clock{
+	display: none;
  }
 
- input#clock{
-	  display: none;
+h4{
+	display: none;
  }
 
- h4{
-	  display: none;
+h3{
+	display: none;
  }
+
+h2{
+	display: none;
+}
+
+
+

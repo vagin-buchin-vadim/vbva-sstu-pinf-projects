@@ -1,71 +1,123 @@
 ﻿body{
-	background: url(https://cdn.hipwallpaper.com/i/83/55/1vdRma.jpg) no-repeat center center fixed;
-    background-size: 0%;
+	background: url(https://мэфк.рф/wp-content/uploads/2020/08/1587235327_33-p-belie-foni-v-khoroshem-razreshenii-109-1-scaled.jpg) no-repeat center center fixed;
+    background-size: 100%;
 }
 
 div{
 	font: 24px Arial;
 	display: block;
+	margin-bottom: 15px;
 }
 
 div#menu0{
+	display:inline;
 	position: absolute;
 	right: 0;
-	top: 0;
+	top: 5px;
 	color: black;
 }
 
-div#menu1{
+	div#menu1 {
+		display: block;
+		width: 1300px;
+	}
+
+	div#menu2 {
+		display: block;
+		width: 1300px;
+	}
+
+	div#menu3 {
+		display: block;
+		width: 1300px;
+	}
+
+	div#menu4 {
+		border: 4px solid black;
+		background-color: black;
+		display: block;
+		color: white;
+		font: 32px Arial;
+		width: 125px;
+		border-radius: 15px;
+	}
+
+	div#menu5 {
+		display: block;
+		width: 1300px;
+	}
+
+div#menu6{
 	display: block;
 }
 
-div#menu2{
-	display: block;
+div#menu6_add{
+	color: white;
+	position: absolute;
+	display: none;
+	width: 600px;
+	height: 200px;
 }
 
-div#menu3{
+input#wallpaperActive {
 	display: block;
+	margin-top: 30px;
 }
-
-div#menu4{
-	display: block;
-}
-
-div#menu5{
-	display: block;
-}
-
- input#wallpaperActive{
-	  display: block;
- }
 
  input#clock{
 	  display: inline;
  }
 
-input{
+input {
+	display: block;
 	font: 18px Arial;
 	margin: 10px;
 	height: 30px;
 	width: 270px;
 	background-color: white;
-}
-
-input#clock{
-	margin-bottom: 50px;
-}
-
-input#array{
-	margin-bottom: 50px;
+	border-radius: 20px;
+	border: 2px solid black;
 }
 
 input:hover{
-	background-color: lime;
+	background-color: black;
+	color: white;
+	border-radius: 20px;
+	border: 3px solid gray;
 }
 
 h4{
+	display: block;
 	width: 1530px;
 	display: block;
-	font: 18px TimesNewRoman;
+	font: 24px Arial;
+	margin-top: -10px;
+}
+
+h3 {
+	display: block;
+	width: 1430px;
+	display: block;
+	font: 20px Arial;
+	margin-top: 10px;
+}
+
+h2{
+	display: block;
+}
+
+::-webkit-scrollbar {
+    width: 18px;
+}
+ 
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+    border-radius: 20px;
+}
+ 
+::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+	border: 1px solid black;
 }
 
